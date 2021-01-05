@@ -1,7 +1,10 @@
 <template>
   <div class="about">
     <h1 class="text-center">Current World Events</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event" :class="evt-card"/>
+    <div class="text-center">
+      <router-link class="btn" tag="button" to="/createEvent">Add Event</router-link>
+    </div>
+    <EventCard v-for="event in events" :key="event.id" :event="event"/>
   </div>
 </template>
 
@@ -21,3 +24,15 @@ export default {
 
 }
 </script>
+<style scoped>
+.btn{
+  padding: 10px 50px;
+  border: 2px solid gray;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover{
+  border: 2px solid lightgreen;
+}
+</style>

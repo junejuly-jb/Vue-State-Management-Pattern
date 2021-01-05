@@ -13,6 +13,10 @@ export default {
 
     getEvents() {
         return apiClient.get('/events')
-    }
-    
+    },
+
+    addEvents(payload) {
+        return apiClient.post('/events', payload)
+    },
+
 }
