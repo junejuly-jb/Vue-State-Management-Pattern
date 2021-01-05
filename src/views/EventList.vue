@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <h1>Current World Events</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
+    <h1 class="text-center">Current World Events</h1>
+    <EventCard v-for="event in events" :key="event.id" :event="event" :class="evt-card"/>
   </div>
 </template>
 

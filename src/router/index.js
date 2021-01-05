@@ -13,11 +13,13 @@ const routes = [
   {
     path: '/events',
     name: 'EventList',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/EventList.vue')
+  },
+  {
+    path: '/eventshow/:id',
+    component: () => import('../views/ShowEvent.vue')
   }
+
 ]
 
 const router = new VueRouter({
