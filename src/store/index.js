@@ -21,7 +21,12 @@ export default new Vuex.Store({
 
     GET_EVENTS(state, payload) {
       state.events = payload
+    },
+
+    SET_EVENT(state, payload) {
+      state.events.push(payload)
     }
+
   },
   actions: {
     
@@ -37,6 +42,12 @@ export default new Vuex.Store({
         .catch(err => {
           console.log(err.response)
         })
+    },
+
+    createEvents({ commit }, payload) {
+      return EventService.addEvents(payload).then(() => {
+        commit('SET_EVENT', payload)
+      })
     }
     
   },

@@ -1,28 +1,44 @@
 {
-    "events": [
-        {
-            "id": 1,
-            "title": "Tree Planting",
-            "date": "Jan 5 2021",
-            "time": "7:00",
-            "location": "Cebu City",
-            "organizer": "June"
-        },
-        {
-            "id": 2,
-            "title": "Beach Cleanup",
-            "date": "Jan 20 2021",
-            "time": "10:00",
-            "location": "Lapu Lapu City",
-            "organizer": "Brian"
-        },
-        {
-            "id": 3,
-            "title": "Mountain Climbing",
-            "date": "Feb 13 2021",
-            "time": "8:00",
-            "location": "Dalaguete Cebu",
-            "organizer": "John"
-        }
-    ]
+  "events": [
+    {
+      "id": 1,
+      "title": "Tree Planting",
+      "date": "Jan 5 2021",
+      "time": "7:00",
+      "location": "Cebu City",
+      "organizer": "June"
+    },
+    {
+      "id": 2,
+      "title": "Beach Cleanup",
+      "date": "Jan 20 2021",
+      "time": "10:00",
+      "location": "Lapu Lapu City",
+      "organizer": "Brian"
+    },
+    {
+      "id": 3,
+      "title": "Mountain Climbing",
+      "date": "Feb 13 2021",
+      "time": "8:00",
+      "location": "Dalaguete Cebu",
+      "organizer": "John"
+    },
+    {
+      "id": 9463377,
+      "organizer": "June Brianne",
+      "title": "asd",
+      "date": "2021-01-15",
+      "time": "15:53",
+      "location": "asd123"
+    },
+    {
+      "id": 183825,
+      "organizer": "June Brianne",
+      "title": "Hello World",
+      "date": "2021-01-01",
+      "time": "01:00",
+      "location": "Cebu Philippines"
+    }
+  ]
 }
