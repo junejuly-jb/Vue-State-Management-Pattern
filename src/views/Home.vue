@@ -1,10 +1,10 @@
 <template>
-  <div class="home">
-    <input type="number" v-model.number="value">
+  <div class="home text-center">
+    <input type="number" v-model.number="value" class="input">
     <p>increment by: ( {{value}} )</p>
-    <h1>{{count}}</h1>
-    <button @click="incrementCount">Increment</button>
-    <button @click="resetCount">Reset</button>
+    <div class="counter">{{count}}</div>
+    <button @click="incrementCount" class="btn">Increment</button>
+    <button @click="resetCount" class="btn">Reset</button>
   </div>
 </template>
 
@@ -35,3 +35,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+.counter{
+  font-size: 100px;
+  font-weight: bold;
+  padding: 20px 20px;
+}
+
+.btn{
+  padding: 10px 25px;
+  margin: 0px 10px;
+  border: 2px solid black;
+  background: none;
+}
+</style>
