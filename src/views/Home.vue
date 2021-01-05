@@ -23,6 +23,7 @@ export default {
     ...mapState(['count'])
   },
   methods: {
+
     incrementCount(){
       this.$store.dispatch('incrementCount', this.value)
     },
@@ -30,6 +31,7 @@ export default {
     resetCount(){
       this.$store.commit('RESET_COUNT', this.resetValue)
     }
+    
   }
 }
 </script>
