@@ -1,0 +1,28 @@
+{
+    "events": [
+        {
+            "id": 1,
+            "title": "Tree Planting",
+            "date": "Jan 5 2021",
+            "time": "7:00",
+            "location": "Cebu City",
+            "organizer": "June"
+        },
+        {
+            "id": 2,
+            "title": "Beach Cleanup",
+            "date": "Jan 20 2021",
+            "time": "10:00",
+            "location": "Lapu Lapu City",
+            "organizer": "Brian"
+        },
+        {
+            "id": 3,
+            "title": "Mountain Climbing",
+            "date": "Feb 13 2021",
+            "time": "8:00",
+            "location": "Dalaguete Cebu",
+            "organizer": "John"
+        }
+    ]
+}
