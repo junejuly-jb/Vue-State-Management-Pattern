@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="'/showevent/' + event.id">
+    <router-link :to="'/eventShow/' + event.id">
       <div class="list-wrapper">
         <div>{{event.title}}</div>
         <div>{{event.location}}</div>
