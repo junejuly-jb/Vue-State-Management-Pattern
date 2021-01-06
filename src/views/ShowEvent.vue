@@ -20,6 +20,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import store from '../store/index'
 
 export default {
     data: function(){
@@ -28,14 +29,17 @@ export default {
         }
     },
 
-    created(){
-        this.$store.dispatch('fetchEvent', this.id)
+    beforeRouteEnter(routeTo, routeFrom, next){
+        store.dispatch('fetchEvent', routeTo.params.id).then(() =>{
+            next()
+        })
     },
 
+    // created(){
+    //     this.$store.dispatch('fetchEvent', this.id)
+    // },
+
     computed: {
-        getEvent(){
-            return this.$store.getters.getEventById
-        },
         ...mapState(['event'])
     }
 }
