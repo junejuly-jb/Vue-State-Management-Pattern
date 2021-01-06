@@ -43,7 +43,7 @@ export default {
 
     methods: {
         onClickAddEvent(){
-            this.$store.dispatch('createEvents', this.form)
+            this.$store.dispatch('event/createEvents', this.form)
             // console.log(this.form)
             .then( () => {
                 console.log('success hehe')

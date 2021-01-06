@@ -4,7 +4,7 @@
     <div class="text-center">
       <router-link class="btn" tag="button" to="/createEvent">Add Event</router-link>
     </div>
-    <EventCard v-for="event in events" :key="event.id" :event="event"/>
+    <EventCard v-for="event in event.events" :key="event.id" :event="event"/>
   </div>
 </template>
 
@@ -15,13 +15,13 @@ import store from '../store/index'
 export default {
 
   beforeRouteEnter(routeTo, routeFrom, next){
-    store.dispatch('fetchEvents').then(() => {
+    store.dispatch('event/fetchEvents').then(() => {
       next()
     })
   },
 
   computed: {
-    ...mapState(['events'])
+    ...mapState(['event'])
   }
 
 }
