@@ -10,12 +10,14 @@
 
 <script>
 import { mapState } from 'vuex';
-
+import store from '../store/index'
 
 export default {
 
-  created(){
-    this.$store.dispatch('fetchEvents')
+  beforeRouteEnter(routeTo, routeFrom, next){
+    store.dispatch('fetchEvents').then(() => {
+      next()
+    })
   },
 
   computed: {

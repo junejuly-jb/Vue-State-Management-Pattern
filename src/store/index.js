@@ -63,11 +63,11 @@ export default new Vuex.Store({
       }
 
       else {
-        EventService.getEvent(id).then(response => {
+        return EventService.getEvent(id).then(response => {
           commit('GET_EVENT', response.data)
         })
       }
-      
+
     }
   },
 
