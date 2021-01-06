@@ -5,15 +5,15 @@
       </div>
       <div class="content-wrapper">
           <h4>Title</h4>
-          <div>{{event.title}}</div>
+          <div>{{event.event.title}}</div>
           <h4>Date</h4>
-          <div>{{event.date}}</div>
+          <div>{{event.event.date}}</div>
           <h4>Time</h4>
-          <div>{{event.time}}</div>
+          <div>{{event.event.time}}</div>
           <h4>Location</h4>
-          <div>{{event.location}}</div>
+          <div>{{event.event.location}}</div>
           <h4>Organizer</h4>
-          <div>{{event.organizer}}</div>
+          <div>{{event.event.organizer}}</div>
       </div>
   </div>
 </template>
@@ -23,21 +23,12 @@ import { mapState } from 'vuex'
 import store from '../store/index'
 
 export default {
-    data: function(){
-        return {
-            id: this.$route.params.id
-        }
-    },
 
     beforeRouteEnter(routeTo, routeFrom, next){
-        store.dispatch('fetchEvent', routeTo.params.id).then(() =>{
+        store.dispatch('event/fetchEvent', routeTo.params.id).then(() =>{
             next()
         })
     },
-
-    // created(){
-    //     this.$store.dispatch('fetchEvent', this.id)
-    // },
 
     computed: {
         ...mapState(['event'])

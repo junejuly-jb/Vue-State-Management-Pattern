@@ -2,7 +2,7 @@
   <div class="home text-center">
     <input type="number" v-model.number="value" class="input">
     <p>increment by: ( {{value}} )</p>
-    <div class="counter">{{count}}</div>
+    <div class="counter">{{counter.count}}</div>
     <button @click="incrementCount" class="btn">Increment</button>
     <button @click="resetCount" class="btn">Reset</button>
   </div>
@@ -20,16 +20,16 @@ export default {
     }
   },
   computed: {
-    ...mapState(['count'])
+    ...mapState(['counter'])
   },
   methods: {
 
     incrementCount(){
-      this.$store.dispatch('incrementCount', this.value)
+      this.$store.dispatch('counter/incrementCount', this.value)
     },
     
     resetCount(){
-      this.$store.commit('RESET_COUNT', this.resetValue)
+      this.$store.commit('counter/RESET_COUNT', this.resetValue)
     }
     
   }
