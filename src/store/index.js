@@ -6,7 +6,9 @@ import * as counter from '../store/modules/counter'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  
+  state: {
+    editMode: false
+  },
   modules: {
     event,
     counter
