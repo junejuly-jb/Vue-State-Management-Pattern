@@ -5,8 +5,8 @@
       </div>
       <div class="content-wrapper">
           <button class="classBtnDel" @click="onClickDeleteEvent(event.event.id)">Delete Event</button>
-          <button class="classBtnDel" @click="btnToggleEdit">Edit Event</button>
-            <div v-show="editMode == true">
+          <button class="classBtnDel" @click="btnToggleEdit(editMode)">Edit Event</button>
+            <div v-show="editMode === false">
                 <h4>Title</h4>
                 <div>{{event.event.title}}</div>
                 <h4>Date</h4>
@@ -28,10 +28,6 @@ import store from '../store/index'
 
 export default {
 
-    data: () => ({
-        editMode: store.state.editMode
-    }),
-
     methods:{
         onClickDeleteEvent(id){
             store.dispatch('event/deleteEvent', id).then(() => {
@@ -39,8 +35,8 @@ export default {
             })
         },
 
-        btnToggleEdit(){
-            console.log('hello')
+        btnToggleEdit(payload){
+            store.commit('SET_EDITMODE', payload)
         }
     },
 
@@ -51,7 +47,10 @@ export default {
     },
 
     computed: {
-        ...mapState(['event'])
+        ...mapState(['event']),
+        editMode(){
+            return store.state.editMode
+        }
     }
 }
 </script>
