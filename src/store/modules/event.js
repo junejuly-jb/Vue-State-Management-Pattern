@@ -19,6 +19,11 @@ export const mutations = {
 
     GET_EVENT(state, payload) {
         state.event = payload
+    },
+
+    REMOVE_EVENT(state, payload) {
+        const i = state.events.map(event => event.id).indexOf(payload)
+        state.events.splice(i, 1)
     }
 
 }
@@ -42,17 +47,25 @@ export const actions = {
     },
 
     fetchEvent({ getters, commit }, id) {
-    const event = getters.getThisEvent(id)
+        const event = getters.getThisEvent(id)
 
-    if (event) {
-        commit('GET_EVENT', event)
-    }
+        if (event) {
+            commit('GET_EVENT', event)
+        }
 
-    else {
-        return EventService.getEvent(id).then(response => {
-        commit('GET_EVENT', response.data)
+        else {
+            return EventService.getEvent(id).then(response => {
+                commit('GET_EVENT', response.data)
+            })
+        }
+
+    },
+
+    deleteEvent({ commit }, id) {
+        
+        return EventService.deleteEvent(id).then(() => { 
+            commit('REMOVE_EVENT', id)
         })
-    }
 
     }
 
